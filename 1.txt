@@ -1,0 +1,19 @@
+import os
+from openai import OpenAI
+
+# 读取环境变量中的 api_key
+client = OpenAI(
+    api_key=os.environ.get("OPENAI_API_KEY"),
+    # 如果用通义千问，加 base_url：
+    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+)
+
+
+def get_completion(prompt, model="qwen3-max"):
+    messages = [{"role": "user", "content": prompt}]
+    response = client.chat.completions.create(
+        model=model,
+        messages=messages,
+        temperature=0,  # 值越低则输出文本随机性越低
+    )
+    return response.choices[0].message.content
