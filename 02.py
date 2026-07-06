@@ -1,5 +1,7 @@
 from openai import OpenAI
 import os
+# 导入相关依赖
+from IPython.display import display, HTML
 
 # 读取环境变量中的 api_key
 client = OpenAI(
@@ -75,6 +77,37 @@ fact_sheet_chair = """
 # print(response)
 
 # 优化后的 Prompt，说明面向对象，应具有什么性质且侧重于什么方面
+# prompt = f"""
+# 您的任务是帮助营销团队基于技术说明书创建一个产品的零售网站描述。
+#
+# 根据```标记的技术说明书中提供的信息，编写一个产品描述。
+#
+# 该描述面向家具零售商，因此应具有技术性质，并侧重于产品的材料构造。
+#
+# 使用最多50个单词。
+#
+# 技术规格： ```{fact_sheet_chair}```
+# """
+# response = get_completion(prompt)
+# print(response)
+# 优化后的 Prompt，说明面向对象，应具有什么性质且侧重于什么方面
+
+# prompt = f"""
+# 您的任务是帮助营销团队基于技术说明书创建一个产品的零售网站描述。
+#
+# 根据```标记的技术说明书中提供的信息，编写一个产品描述。
+#
+# 该描述面向家具零售商，因此应具有技术性质，并侧重于产品的材料构造。
+#
+# 使用最多50个单词。
+#
+# 技术规格： ```{fact_sheet_chair}```
+# """
+# response = get_completion(prompt)
+# print(response)
+
+
+# 要求它抽取信息并组织成表格，并指定表格的列、表名和格式
 prompt = f"""
 您的任务是帮助营销团队基于技术说明书创建一个产品的零售网站描述。
 
@@ -82,9 +115,16 @@ prompt = f"""
 
 该描述面向家具零售商，因此应具有技术性质，并侧重于产品的材料构造。
 
-使用最多50个单词。
+在描述末尾，包括技术规格中每个7个字符的产品ID。
 
-技术规格： ```{fact_sheet_chair}```
+在描述之后，包括一个表格，提供产品的尺寸。表格应该有两列。第一列包括尺寸的名称。第二列只包括英寸的测量值。
+
+给表格命名为“产品尺寸”。
+
+将所有内容格式化为可用于网站的HTML格式。将描述放在<div>元素中。
+
+技术规格：```{fact_sheet_chair}```
 """
+
 response = get_completion(prompt)
 print(response)
