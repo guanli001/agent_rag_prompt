@@ -122,9 +122,9 @@ dashboard = pn.Column(
     pn.panel(interactive_conversation, loading_indicator=True, height=300),
 )
 
-messages =  context.copy()
+messages = context.copy()
 messages.append(
-{'role':'system', 'content':'创建上一个食品订单的 json 摘要。\
+    {'role': 'system', 'content': '创建上一个食品订单的 json 摘要。\
 逐项列出每件商品的价格，字段应该是 1) 披萨，包括大小 2) 配料列表 3) 饮料列表，包括大小 4) 配菜列表包括大小 5) 总价'},
 )
 
