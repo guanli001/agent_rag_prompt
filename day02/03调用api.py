@@ -1,6 +1,6 @@
 import os, requests, json
 
-api_key = os.environ.get("DEEPSEEK_API_KEY")
+api_key = os.environ.get("DASHSCOPE_API_KEY")
 
 response = requests.post(
     "https://api.deepseek.com/v1/chat/completions",

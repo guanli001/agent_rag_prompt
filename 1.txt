@@ -1,6 +1,6 @@
 import os
 from openai import OpenAI
-
+DASHSCOPE_API_KEY
 # 读取环境变量中的 api_key
 client = OpenAI(
     api_key=os.environ.get("OPENAI_API_KEY"),
