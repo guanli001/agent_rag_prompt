@@ -212,5 +212,5 @@ async def main():
     await client.close()
     print("\n  ✅ LLMClient 测试完毕，这个类后面所有阶段都会用到！")
 
-
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
