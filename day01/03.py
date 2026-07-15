@@ -71,7 +71,7 @@ around the $50 mark, it's a good deal. The manufactuer's \
 replacements heads are pretty expensive, but you can \
 get generic ones that're more reasonably priced. This \
 toothbrush makes me feel like I've been to the dentist \
-every day. My teeth feel sparkly clean! 
+every day08. My teeth feel sparkly clean! 
 """
 
 # review for a blender

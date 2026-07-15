@@ -17,3 +17,10 @@ def get_completion(prompt, model="qwen3-max"):
         temperature=0,  # 值越低则输出文本随机性越低
     )
     return response.choices[0].message.content
+
+llm = ChatOpenAI(
+    model="qwen-turbo",
+    api_key=os.getenv("DASHSCOPE_API_KEY"),
+    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",  # 通义千问兼容接口
+    temperature=0.7
+)
